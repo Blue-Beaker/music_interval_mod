@@ -1,4 +1,4 @@
-package io.bluebeaker.examplemod;
+package io.bluebeaker.musicinterval;
 
 import org.apache.logging.log4j.Logger;
 
@@ -9,22 +9,27 @@ import net.minecraftforge.common.config.Config.Type;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = ExampleMod.MODID, name = ExampleMod.NAME, version = ExampleMod.VERSION)
-public class ExampleMod
+@Mod(modid = MusicIntervalMod.MODID, name = MusicIntervalMod.NAME, version = MusicIntervalMod.VERSION,clientSideOnly = true)
+public class MusicIntervalMod
 {
-    public static final String MODID = "examplemod";
-    public static final String NAME = "ExampleMod";
+    public static final String MODID = "musicinterval";
+    public static final String NAME = "Music Interval";
     public static final String VERSION = "1.0";
     
     public MinecraftServer server;
 
     private static Logger logger;
     
-    public ExampleMod() {
+    public MusicIntervalMod() {
         MinecraftForge.EVENT_BUS.register(this);
+    }
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        logger = event.getModLog();
     }
     @EventHandler
     public void onServerStart(FMLServerStartingEvent event){
@@ -38,7 +43,7 @@ public class ExampleMod
         }
     }
 
-    public void logInfo(String log){
+    public static void logInfo(String log){
         logger.info(log);
     }
 }

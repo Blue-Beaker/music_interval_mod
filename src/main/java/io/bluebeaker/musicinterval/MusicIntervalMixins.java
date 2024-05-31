@@ -1,4 +1,4 @@
-package io.bluebeaker.examplemod;
+package io.bluebeaker.musicinterval;
 
 import java.util.Collections;
 import java.util.List;
@@ -8,15 +8,15 @@ import javax.annotation.Nullable;
 
 import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import zone.rong.mixinbooter.ILateMixinLoader;
+import zone.rong.mixinbooter.IEarlyMixinLoader;
 
-@IFMLLoadingPlugin.Name("examplemod")
+@IFMLLoadingPlugin.Name("musicinterval")
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
-public class ExampleModMixins implements IFMLLoadingPlugin, ILateMixinLoader {
+public class MusicIntervalMixins implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.examplemod.json");
+        return Collections.singletonList("mixins.musicinterval.json");
     }
 
     @Override

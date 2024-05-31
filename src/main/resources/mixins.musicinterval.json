@@ -1,16 +1,18 @@
 {
     "required": false,
     "compatibilityLevel": "JAVA_8",
-    "package": "io.bluebeaker.examplemod.mixin",
+    "package": "io.bluebeaker.musicinterval.mixins",
     "mixins": [
 
     ],
     "client": [
+      "MixinMusicType",
+      "AccessorMusicType"
     ],
     "server": [
     ],
     "injectors": {
       "defaultRequire": 1
     },
-    "refmap": "mixins.examplemod.refmap.json"
+    "refmap": "mixins.musicinterval.refmap.json"
   }
