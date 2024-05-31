@@ -2,7 +2,7 @@
 {
   "modid": "musicinterval",
   "name": "Music Interval",
-  "description": "MusicInterval",
+  "description": "Control intervals between background musics.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
