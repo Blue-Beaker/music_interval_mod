@@ -44,6 +44,7 @@ public class MusicIntervalMod
     }
 
     public static void logInfo(String log){
+        if(logger!=null)
         logger.info(log);
     }
 }
